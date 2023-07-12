@@ -1,0 +1,88 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+// [方案一]
+// 主题颜色切换由 ThemeController 组件完成，该组件通过向 <body /> 挂载 style
+// 并在 scss 变量中使用 var() 方法获取完成动态切换主题
+// 这种方案导致很难生成 $primary-1 $primary-2 这样不同浓度的颜色变量
+// 方案二
+// 完全使用静态的控制方法，在 <body /> 上挂载 data-theme 属性，在 scss 中配置主题颜色
+// 在顶层 scss 中使用属性选择器分别为每个主题配置主要样式 mixin
+// 在 scss 变量文件中引入各方法
+// 已测试兼容 ThemeController v1.2，Windows XP 及 Chrome49
+
+// ==================== CASE 2 START ====================
+// 在 ThemeController 中配置 html attr 作为主题
+// document.documentElement.setAttribute('data-theme', theme)
+//
+// 在参数中配置浓度，$chroma 取值 [0, 2]，超过 1 为加深浓度
+// 这种方案适用于需要在 scss 具体 class 中调整色彩透明度的场景
+// .primary-1 {
+//     @include bg-color("primary", .5)
+// }
+//
+//$themes: (
+//  default: (
+//    primary: #F99D35,
+//    text-pbg: #000000,
+//  ),
+//  quasarblue: (
+//    primary: #1976D2,
+//    text-pbg: #FFFFFF,
+//  )
+//);
+//
+//@mixin themeify {
+//  @each $theme-name, $theme-map in $themes {
+//    $theme-map: $theme-map !global;
+//    [data-theme="#{$theme-name}"] & {
+//      @content;
+//    }
+//  }
+//}
+//
+//@function theme-get($key, $chroma: 1) {
+//  @if $chroma >= 0 and $chroma <= 1 {
+//    @return mix(map-get($theme-map, $key), #FFFFFF, percentage($chroma))
+//  } @else if $chroma > 1 and $chroma <= 2 {
+//    @return mix(map-get($theme-map, $key), #333333, percentage(2 - $chroma))
+//  } @else {
+//    @return map-get($theme-map, $key)
+//  }
+//}
+//
+//@mixin bg-color($key) {
+//  @include themeify {
+//    background-color: theme-get($key, 1);
+//  }
+//}
+// ==================== CASE 2 FINISH ====================
+
+// 主题色
+$primary: var(--primary);
+// 以主题色为背景时的文本颜色
+$text-pbg: var(--text-pbg);
+// 表头颜色
+$th-primary: var(--th-primary);
+
+$secondary: #26A69A;
+$accent: #9C27B0;
+
+$dark: #1D1D1D;
+$dark-page: #121212;
+
+$positive: #21BA45;
+$negative: #C10015;
+$info: #31CCEC;
+$warning: #F2C037;

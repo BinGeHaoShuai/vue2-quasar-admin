@@ -1,0 +1,144 @@
+@import "quasar/dist/quasar.min";
+
+@font-face {
+  font-display: swap;
+  font-family: "SourceHanSansHWSC";
+  src: url("./fonts/SourceHanSansHWSC-VF.otf.woff2");
+}
+
+@media print {
+  body{
+    -webkit-print-color-adjust: exact;
+    -moz-print-color-adjust: exact;
+    -ms-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+body {
+  font-family: "Source Han Sans HW SC VF", "思源黑体 HW VF", "SourceHanSansHWSC", "Roboto", "-apple-system", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+.h6-vertical-bar:before {
+  content: "";
+  background-color: $primary;
+  width: 3px;
+  height: 32px;
+  position: absolute;
+}
+
+.q-page-container .h6-vertical-bar {
+  @extend .q-mb-md;
+}
+
+.h6-vertical-bar span {
+  @extend .text-h6;
+  @extend .text-bold;
+  @extend .q-pl-md;
+}
+
+.body-vertical-bar:before {
+  content: "";
+  background-color: $primary;
+  width: 2px;
+  height: 24px;
+  position: absolute;
+}
+
+.body-vertical-bar {
+  @extend .q-mb-xs;
+}
+
+.body-vertical-bar span {
+  @extend .q-ml-sm;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-pbg {
+  color: $text-pbg !important;
+}
+
+.table-header {
+  background-color: white;
+
+  th {
+    @extend .text-body2;
+    color: $text-pbg;
+    background-color: $th-primary;
+  }
+}
+
+.table-cell-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.el-popper-on-quasar-dialog {
+  z-index: 6500 !important;
+}
+
+.dialog-card-small {
+  width: 400px;
+}
+
+.dialog-card-medium {
+  width: 700px;
+  max-width: 80vw !important;
+}
+
+.dialog-card-large {
+  width: 1200px;
+  max-width: 90vw !important;
+}
+
+.validation-input-label {
+  margin-bottom: 20px;
+}
+
+.space-scrollbar {
+  margin-right: 12px;
+  margin-bottom: 10px;
+}
+
+.tree-badge-container {
+  display: flex;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+// HACK UI FRAMEWORK STYLE, YOU NEED KNOW EXACTLY WHAT ARE YOU DOING
+
+.q-btn__wrapper,
+.q-card__actions .q-btn--rectangle .q-btn__wrapper {
+  padding: 6px 12px;
+}
+
+.q-btn__content .q-icon {
+  font-size: 1.25rem;
+}
+
+.el-table .el-table__cell {
+  padding: 6px 0 !important;
+}
+
+.q-timeline__content {
+  padding-bottom: 8px;
+}
+
+.q-timeline__title {
+  margin-bottom: 4px;
+}
+
+.el-tree-wrap {
+  .el-tree-node {
+    white-space: normal;
+    .el-tree-node__content {
+      height: 100%;
+      align-items: start;
+    }
+  }
+}
