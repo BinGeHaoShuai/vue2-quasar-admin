@@ -3,7 +3,7 @@
 @font-face {
   font-display: swap;
   font-family: "SourceHanSansHWSC";
-  src: url("./fonts/SourceHanSansHWSC-VF.otf.woff2");
+  src: url("./fonts/SourceHanSansHWSC-VF.otf.woff2") format('woff2');
 }
 
 @media print {
@@ -111,6 +111,10 @@ body {
 }
 
 // HACK UI FRAMEWORK STYLE, YOU NEED KNOW EXACTLY WHAT ARE YOU DOING
+
+.text-body1 {
+  line-height: 1.8rem;
+}
 
 .q-btn__wrapper,
 .q-card__actions .q-btn--rectangle .q-btn__wrapper {

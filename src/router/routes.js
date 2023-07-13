@@ -5,11 +5,13 @@ const genRouteTree = (menu) => {
   let result = []
   if (!isEmpty(menu)) {
     menu.forEach(item => {
-      result.push({
-        name: item.name,
-        path: item.path,
-        component: resolve => require([`src/pages/${item.component}`], resolve)
-      })
+      if (isRoute(item)) {
+        result.push({
+          name: item.name,
+          path: item.path,
+          component: resolve => require([`src/pages/${item.component}`], resolve)
+        })
+      }
       result = [...result, ...genRouteTree(item.children)]
     })
   }
@@ -17,7 +19,6 @@ const genRouteTree = (menu) => {
 }
 
 const getRoutes = async () => {
-  // TODO: getMenu here
   const menu = await store.dispatch('globalConfig/getMenu')
   return new Promise(resolve => {
     resolve([

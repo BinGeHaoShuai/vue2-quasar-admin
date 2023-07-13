@@ -34,7 +34,17 @@ const globalConfig = {
          * component: [路由]组件名
          * path: [路由]路径
          */
-        const exampleMenu = [{ id: '123456', isHide: false, name: 'Dashboard', orderSort: 0, icon: 'wb_cloudy', component: 'Dashboard', path: '/dashboard' }]
+        const exampleMenu = [{
+          id: 'test1',
+          isHide: false,
+          name: 'Dashboard',
+          orderSort: 0,
+          icon: 'wb_cloudy',
+          component: 'Dashboard',
+          children: [
+            { id: '123', isHide: false, name: 'Dashboard', orderSort: 0, icon: 'wb_cloudy', component: 'Dashboard', path: '/dashboard' }
+          ]
+        }]
         commit('setMenu', exampleMenu)
         resolve(exampleMenu)
       })
