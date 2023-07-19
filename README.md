@@ -1,5 +1,5 @@
 # vue2-quasar-admin
-Background management system built with vue2 and quasar
+基于 vue2 和 quasar 实现的后台管理系统
 ## 前端工程模板（project-name）
 
 ### 修改项目信息（删除该节）
