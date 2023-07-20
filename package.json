@@ -1,9 +1,9 @@
 {
-  "name": "project-name",
+  "name": "vue2-quasar-admin",
   "version": "0.0.1",
-  "description": "project-name",
-  "productName": "project_name",
-  "author": "author_name <author_email>",
+  "description": "vue2-quasar-admin",
+  "productName": "vue2-quasar-admin",
+  "author": "tangbin <980214152@qq.com>",
   "private": true,
   "scripts": {
     "dev": "quasar dev",

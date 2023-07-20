@@ -23,10 +23,19 @@ const getRoutes = async () => {
   return new Promise(resolve => {
     resolve([
       {
+        path: '/login',
+        component: resolve => require(['src/pages/Login'], resolve)
+      },
+      {
         path: '/',
-        component: resolve => require(['src/layouts/MainLayout'], resolve),
+        component: resolve => require(['src/layouts/MainLayoutOnlyHeadTab'], resolve),
         children: genRouteTree(menu)
       },
+      // {
+      //   path: '/',
+      //   component: resolve => require(['src/layouts/MainLayout'], resolve),
+      //   children: genRouteTree(menu)
+      // },
       {
         path: '*',
         component: resolve => require(['src/pages/Error404'], resolve)
