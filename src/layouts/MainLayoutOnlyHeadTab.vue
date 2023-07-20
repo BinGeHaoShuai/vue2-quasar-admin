@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-    <q-layout view="lHh lpr lFf" container style="height: 400px" class="shadow-2 rounded-borders">
+    <q-layout view="lHh lpr lFf" container style="height: 100vh" class="shadow-2 rounded-borders">
       <q-header elevated>
         <q-toolbar>
           <q-avatar>
@@ -11,7 +10,15 @@
             Vue2 Quasar Admin
           </q-toolbar-title>
 
-          
+          <q-tabs
+            v-model="tab"
+            inline-label
+            class="text-white"
+          >
+            <q-tab name="mails" label="组织" />
+            <q-tab name="alarms" label="用户" />
+            <q-tab name="movies" label="角色" />
+          </q-tabs>
 
           <q-btn flat round dense icon="whatshot" />
         </q-toolbar>
@@ -19,17 +26,24 @@
 
       <q-page-container>
         <q-page padding>
-          <p v-for="n in 15" :key="n">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil praesentium molestias a adipisci, dolore vitae odit, quidem consequatur optio voluptates asperiores pariatur eos numquam rerum delectus commodi perferendis voluptate?
-          </p>
+          <router-view></router-view>
         </q-page>
       </q-page-container>
     </q-layout>
-  </div>
 </template>
 
 <script>
+export default {
+  name: 'MainLayoutOnlyHeadTab',
+  data() {
+    return {
+      tab: 'mails'
+    }
+  },
+  computed: {
 
+  }
+}
 </script>
 
 <style>
