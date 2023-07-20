@@ -19,4 +19,7 @@ npm config set registry=https://registry.npmmirror.com/
 npm config set sass_binary_site=https://registry.npmmirror.com/-/binary/node-sass
 # Install quasar/cli
 npm install -g @quasar/cli@1.4.0
+#start project
+npm install
+quasar dev
 ```
