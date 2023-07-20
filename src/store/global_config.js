@@ -37,13 +37,30 @@ const globalConfig = {
         const exampleMenu = [{
           id: 'test1',
           isHide: false,
-          name: 'Dashboard',
+          name: 'RoleManage',
           orderSort: 0,
-          icon: 'wb_cloudy',
-          component: 'Dashboard',
-          children: [
-            { id: '123', isHide: false, name: 'Dashboard', orderSort: 0, icon: 'wb_cloudy', component: 'Dashboard', path: '/dashboard' }
-          ]
+          icon: '',
+          component: 'RoleManage',
+          path: '/role',
+          children: []
+        }, {
+          id: 'test2',
+          isHide: false,
+          name: 'TeamManage',
+          orderSort: 0,
+          icon: '',
+          component: 'TeamManage',
+          path: '/team',
+          children: []
+        }, {
+          id: 'test3',
+          isHide: false,
+          name: 'UserManage',
+          orderSort: 0,
+          icon: '',
+          component: 'UserManage',
+          path: '/user',
+          children: []
         }]
         commit('setMenu', exampleMenu)
         resolve(exampleMenu)

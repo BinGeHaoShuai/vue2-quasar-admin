@@ -15,9 +15,9 @@
             inline-label
             class="text-white"
           >
-            <q-tab name="mails" label="组织" />
-            <q-tab name="alarms" label="用户" />
-            <q-tab name="movies" label="角色" />
+            <q-route-tab name="mails" label="组织" to="/team" exact />
+            <q-route-tab name="alarms" label="用户" to="/user" exact />
+            <q-route-tab name="movies" label="角色" to="/role" exact />
           </q-tabs>
 
           <q-btn flat round dense icon="whatshot" />
