@@ -27,6 +27,7 @@
         color="primary"
         label="登录"
         class="login-btn"
+        @click="login"
       />
     </q-card>
   </div>
@@ -43,7 +44,11 @@ export default {
       isAutoLogin: false
     }
   },
-  methods: {}
+  methods: {
+    login() {
+      this.$router.push({ name: 'userManage' })
+    }
+  }
 }
 </script>
 <style>

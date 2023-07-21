@@ -37,7 +37,7 @@ const globalConfig = {
         const exampleMenu = [{
           id: 'test1',
           isHide: false,
-          name: 'RoleManage',
+          name: 'roleManage',
           orderSort: 0,
           icon: '',
           component: 'RoleManage',
@@ -46,7 +46,7 @@ const globalConfig = {
         }, {
           id: 'test2',
           isHide: false,
-          name: 'TeamManage',
+          name: 'teamManage',
           orderSort: 0,
           icon: '',
           component: 'TeamManage',
@@ -55,12 +55,21 @@ const globalConfig = {
         }, {
           id: 'test3',
           isHide: false,
-          name: 'UserManage',
+          name: 'userManage',
           orderSort: 0,
           icon: '',
-          component: 'UserManage',
+          component: 'user-manage/UserManage',
           path: '/user',
-          children: []
+          children: [{
+            id: 'test4',
+            isHide: false,
+            name: 'userEditor',
+            orderSort: 0,
+            icon: '',
+            component: 'user-manage/UserEditor',
+            path: '/user-editor',
+            children: []
+          }]
         }]
         commit('setMenu', exampleMenu)
         resolve(exampleMenu)

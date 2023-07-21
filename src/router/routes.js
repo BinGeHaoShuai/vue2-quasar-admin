@@ -28,6 +28,7 @@ const getRoutes = async () => {
       },
       {
         path: '/',
+        redirect: 'login',
         component: resolve => require(['src/layouts/MainLayoutOnlyHeadTab'], resolve),
         children: genRouteTree(menu)
       },
