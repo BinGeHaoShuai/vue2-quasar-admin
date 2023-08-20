@@ -1,494 +1,500 @@
 <template>
   <div>
-  <div class="b-radius-solid-1">
-    <div class="q-pa-md bg-grey-2">
-      <span>编辑用户</span>
-      <q-btn
-        color="white"
-        text-color="black"
-        :disable="loading"
-        label="保存"
-        @click="addRow"
-      />
-      <q-btn
-        class="q-ml-sm"
-        color="primary"
-        :disable="loading"
-        label="保存&退出"
-        @click="removeRow"
-      />
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>组织：</span>
+    <div class="b-radius-solid-1">
+      <div class="q-pa-md bg-grey-2">
+        <span>编辑用户</span>
+        <q-btn
+          color="white"
+          text-color="black"
+          :disable="loading"
+          label="保存"
+          @click="addRow"
+        />
+        <q-btn
+          class="q-ml-sm"
+          color="primary"
+          :disable="loading"
+          label="保存&退出"
+          @click="removeRow"
+        />
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>组织：</span>
+          </div>
+          <div class="col">
+            <q-select
+              class="input-h-1"
+              v-model="user.team"
+              outlined
+              :options="options"
+            />
+          </div>
         </div>
-        <div class="col">
-          <q-select
-            class="input-h-1"
-            v-model="user.team"
-            outlined
-            :options="options"
-          />
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>ID：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+              disable
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>名称：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>显示名称：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>头像：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>用户类型：</span>
+          </div>
+          <div class="col">
+            <q-select
+              v-model="user.team"
+              outlined
+              :options="options"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>密码：</span>
+          </div>
+          <div class="col">
+            <q-btn
+              outline
+              glossy
+              unelevated
+              color="grey-4"
+              text-color="black"
+              label="编辑密码"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>电子邮箱：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>手机号：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>国家地区：</span>
+          </div>
+          <div class="col">
+            <q-select
+              v-model="user.team"
+              outlined
+              :options="options"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>城市：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>地址：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>工作单位：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>职位：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>身份证类型：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>身份证号码：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>身份证照片：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>个人页面：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>自我介绍：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>标签：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>语言：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>性别：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>生日：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>教育：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>积分：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>Karma：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>排名：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>注册应用：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>群组：</span>
+          </div>
+          <div class="col">
+            <q-input
+              outlined
+              v-model="user.team"
+              disable
+            />
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>角色：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>权限：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>第三方登录：</span>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>是组织管理员：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>是全局管理员：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>被禁用：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>被删除：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>多因素认证：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>WebAuthn凭据：</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="q-px-md q-pt-md">
+        <div class="row items-center">
+          <div class="col-1">
+            <span>托管账户：</span>
+          </div>
+          <div class="col">
+          </div>
         </div>
       </div>
     </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>ID：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-            disable
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>名称：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>显示名称：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>头像：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>用户类型：</span>
-        </div>
-        <div class="col">
-          <q-select
-            v-model="user.team"
-            outlined
-            :options="options"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>密码：</span>
-        </div>
-        <div class="col">
-          <q-btn outline glossy unelevated color="grey-4" text-color="black" label="编辑密码" />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>电子邮箱：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>手机号：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>国家地区：</span>
-        </div>
-        <div class="col">
-          <q-select
-            v-model="user.team"
-            outlined
-            :options="options"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>城市：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>地址：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>工作单位：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>职位：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>身份证类型：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>身份证号码：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>身份证照片：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>个人页面：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>自我介绍：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>标签：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>语言：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>性别：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>生日：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>教育：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>积分：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>Karma：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>排名：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>注册应用：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>群组：</span>
-        </div>
-        <div class="col">
-          <q-input
-            outlined
-            v-model="user.team"
-            disable
-          />
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>角色：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>权限：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>第三方登录：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>是组织管理员：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>是全局管理员：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>被禁用：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>被删除：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>多因素认证：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>WebAuthn凭据：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    <div class="q-px-md q-pt-md">
-      <div class="row items-center">
-        <div class="col-1">
-          <span>托管账户：</span>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-  </div>
     <div class="q-pa-md">
       <q-btn
         color="white"
@@ -795,18 +801,23 @@ export default {
   border: $grey-4 1px solid;
   overflow: hidden;
 }
+
 .col-1 {
   min-width: 50px;
 }
+
 ::v-deep .q-field--auto-height .q-field__native {
   min-height: 30px;
 }
+
 ::v-deep .q-field--auto-height .q-field__control {
   min-height: 30px;
 }
+
 ::v-deep .q-field__marginal {
   height: 30px;
 }
+
 ::v-deep .q-field__control {
   height: 30px;
 }
